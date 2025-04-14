@@ -1,3 +1,5 @@
+import { parse } from "date-fns";
+
 
 const projectMethods = {
     addTodo(todo) {
@@ -21,7 +23,7 @@ const createProject = function(title, description, todos) {
 
 const createTodo = function (title, description, dueDate, priority) {
     const id = crypto.randomUUID();
-    return {title, description, dueDate, priority, id}
+    return {title, description, dueDate: parse(dueDate, 'yyyy-MM-dd', new Date()), priority, id}
 };
 
 

@@ -114,3 +114,9 @@
     flex: 1;
     flex-wrap: wrap;
   }
+
+  /* CONTENT */
+
+  .todo {
+    display: flex;
+  }

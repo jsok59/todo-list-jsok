@@ -3,6 +3,7 @@ import { renderSidebar } from "./renderSidebar.js";
 import { renderTodo } from "./renderTodo.js";
 import { toggleTodoButton} from "./toggleTodoButton.js";
 import "./style.css";
+import { sortTodos } from "./sortTodos.js";
 
 
 renderSidebar();
@@ -44,5 +45,6 @@ window.debug = {
     createProject,
     createTodo,
     projectList,
-    renderSidebar
+    renderSidebar,
+    sortTodos
 };
