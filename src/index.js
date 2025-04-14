@@ -1,10 +1,12 @@
 import { createProject, createTodo, projectList } from "./logic.js";
 import { renderSidebar } from "./renderSidebar.js";
 import { renderTodo } from "./renderTodo.js";
+import { toggleTodoButton} from "./toggleTodoButton.js";
 import "./style.css";
 
 
 renderSidebar();
+toggleTodoButton();
 
 //Open/close Project Dialog Button
 const createProjectDialogButton = document.querySelector('.create-project');

@@ -2,7 +2,7 @@ import {projectList} from "./logic.js";
 import closeImage from "./images/close.svg"
 import { clearChildDoms } from "./clearChildDoms.js";
 import { renderHeader } from "./renderHeader.js";
-
+import { toggleTodoButton } from "./toggleTodoButton.js";
 
 function renderSidebar() {
     const projectListDiv = document.querySelector(".project-list");
@@ -20,15 +20,18 @@ function renderSidebar() {
             clearChildDoms(document.querySelector(".project-detail"));
             projectList.setCurrentProject(project.id);
             renderHeader(project);
+            toggleTodoButton();
         })
 
 
         const img = document.createElement('img');
         img.src = closeImage;
         img.addEventListener('click', (e)=> {
-            projectList.removeProject(project)
+            projectList.removeProject(project);
+            projectList.clearCurrentProject();
             e.target.parentNode.remove();
             clearChildDoms(document.querySelector(".project-detail"));
+            toggleTodoButton();
         })
 
         div.appendChild(p);
