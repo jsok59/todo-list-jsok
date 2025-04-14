@@ -14,7 +14,8 @@ const createProject = function(title, description, todos) {
 
     return Object.create(projectMethods, {title :{value: title}, 
                                           description: {value:description}, 
-                                          todos: {value:todos}})
+                                          todos: {value:todos},
+                                          id: {value: crypto.randomUUID()}})
 
 };
 
@@ -41,11 +42,7 @@ const projectList = (function() {
 })();
 
 
-window.debug = {
-    createProject,
-    createTodo,
-    projectList
-};
+
 
 export {createProject, createTodo, projectList}
 
