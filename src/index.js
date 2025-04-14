@@ -1,6 +1,8 @@
 import { createProject, createTodo, projectList } from "./logic.js";
 import { renderSidebar } from "./renderSidebar.js";
+import { renderTodo } from "./renderTodo.js";
 import "./style.css";
+
 
 renderSidebar();
 
@@ -25,6 +27,12 @@ const projectForm = document.querySelector(".project-dialog > form");
 projectForm.addEventListener('submit', () => {
     projectList.addProject(createProject(projectForm.title.value, projectForm.desc.value,[]));
     renderSidebar();
+})
+
+const todoForm = document.querySelector(".todo-dialog > form")
+todoForm.addEventListener('submit', ()=> {
+    projectList.getCurrentProject().addTodo(createTodo(todoForm.title.value, todoForm.description.value, todoForm.date.value, todoForm.priority.value));
+    renderTodo();
 })
 
 

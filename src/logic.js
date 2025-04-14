@@ -27,6 +27,10 @@ const createTodo = function (title, description, dueDate, priority) {
 
 const projectList = (function() {
     const projects = [createProject('Example 1', 'This is an example project', [])];
+    let currentProject = projects[0];
+    const setCurrentProject = (id) => currentProject = projects.find(project => project.id===id);
+
+    const getCurrentProject = () => currentProject;
 
     const getProjects = () => projects;
 
@@ -38,7 +42,7 @@ const projectList = (function() {
             projects.splice(index, 1);
     }
 
-    return {getProjects, addProject, removeProject}
+    return {getProjects, addProject, removeProject, setCurrentProject, getCurrentProject}
 })();
 
 
