@@ -29,6 +29,7 @@ projectForm.addEventListener('submit', () => {
     renderSidebar();
 })
 
+//Form submit Todo
 const todoForm = document.querySelector(".todo-dialog > form")
 todoForm.addEventListener('submit', ()=> {
     projectList.getCurrentProject().addTodo(createTodo(todoForm.title.value, todoForm.description.value, todoForm.date.value, todoForm.priority.value));
