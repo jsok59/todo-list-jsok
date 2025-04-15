@@ -24,8 +24,34 @@ function renderTodo() {
         const todoCheckBox = document.createElement('input');
         todoCheckBox.type = "checkbox";
         todoCheckBox.name = "isComplete";
+        if (todo.isComplete) {
+            todoCheckBox.checked = true;
+            h4.style.textDecoration = 'line-through';
+            pDesc.style.textDecoration = 'line-through';
+        } else {
+            todoCheckBox.checked = false;
+            h4.style.textDecoration = 'none';
+            pDesc.style.textDecoration = 'none';
+        }
+
+        todoCheckBox.addEventListener('change', () => {
+            if (todoCheckBox.checked) {
+                todo.isComplete = true;
+                h4.style.textDecoration = 'line-through';
+                pDesc.style.textDecoration = 'line-through';
+            } else {
+                todo.isComplete = false;
+                h4.style.textDecoration = 'none';
+                pDesc.style.textDecoration = 'none';
+            }
+        })
+
         const img = document.createElement('img');
         img.src = closeImg;
+        img.addEventListener('click', (e) => {
+            projectList.getCurrentProject().removeTodo(todo);
+            e.target.parentNode.remove();
+        })
 
 
         div.appendChild(todoCheckBox);

@@ -78,7 +78,7 @@
   }
  
 
-  body {
+ body {
     display: grid;
     height: 100%;
     grid-template-columns: 1fr 4fr;
@@ -120,3 +120,6 @@
   .todo {
     display: flex;
   }
+
+  /* DIALOG */
+
