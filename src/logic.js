@@ -1,5 +1,5 @@
 import { parse } from "date-fns";
-
+import { WebStorage } from "./WebStorage";
 
 const projectMethods = {
     addTodo(todo) {
@@ -14,10 +14,10 @@ const projectMethods = {
 
 const createProject = function(title, description, todos) {
 
-    return Object.create(projectMethods, {title :{value: title}, 
-                                          description: {value:description}, 
-                                          todos: {value:todos},
-                                          id: {value: crypto.randomUUID()}})
+    return Object.create(projectMethods, {title :{value: title, enumerable: true}, 
+                                          description: {value:description, enumerable: true}, 
+                                          todos: {value:todos, enumerable: true},
+                                          id: {value: crypto.randomUUID(), enumerable: true}})
 
 };
 
@@ -28,8 +28,14 @@ const createTodo = function (title, description, dueDate, priority) {
 
 
 const projectList = (function() {
-    const projects = [createProject('Example 1', 'This is an example project', [])];
+    let projects = [createProject('Example 1', 'This is an example project', [])];
     let currentProject = null;
+    const loadProjects = () => {
+        projects = WebStorage.get('projects').map((element)=> {
+            return Object.assign(Object.create(projectMethods), element)
+        })
+    }
+
     const clearCurrentProject = () => currentProject = null;
     const setCurrentProject = (id) => currentProject = projects.find(project => project.id===id);
     const getCurrentProject = () => currentProject;
@@ -41,7 +47,7 @@ const projectList = (function() {
             projects.splice(index, 1);
     }
 
-    return {getProjects, addProject, removeProject, setCurrentProject, getCurrentProject, clearCurrentProject}
+    return {getProjects, addProject, removeProject, setCurrentProject, getCurrentProject, clearCurrentProject, loadProjects}
 })();
 
 

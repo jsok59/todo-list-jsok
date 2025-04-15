@@ -116,10 +116,29 @@
   }
 
   /* CONTENT */
-
+  .content {
+    margin: 70px 150px;
+  }
   .todo {
     display: flex;
+    gap: 5%;
+    border: 2px solid black;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .todo > h4, .todo > h4 + p {
+    flex: 1;
+    text-align: center;
+  }
+
+  .todo > img {
+    margin-left: auto;
   }
 
   /* DIALOG */
 
+  dialog {
+    align-self: center;
+    justify-self: center;
+  }
