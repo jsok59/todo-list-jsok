@@ -35,7 +35,6 @@ const projectList = (function() {
             return Object.assign(Object.create(projectMethods), element)
         })
     }
-
     const clearCurrentProject = () => currentProject = null;
     const setCurrentProject = (id) => currentProject = projects.find(project => project.id===id);
     const getCurrentProject = () => currentProject;
