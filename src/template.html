@@ -1,55 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <dialog class="project-dialog">
-    <form method="dialog">
-      <label for="project-title">Title:</label><input type="text" name="title" id="project-title" required>
-      <label for="project-desc">Description:</label><input type="textarea" name="desc" id="project-desc" required>
-      <button type="submit">Create Project</button>
-      <button type="button">Close</button>
-    </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <dialog class="project-dialog">
+      <form method="dialog">
+        <label for="project-title">Title:</label
+        ><input type="text" name="title" id="project-title" required />
+        <label for="project-desc">Description:</label
+        ><input type="textarea" name="desc" id="project-desc" required />
+        <button type="submit">Create Project</button>
+        <button type="button">Close</button>
+      </form>
+    </dialog>
 
-  </dialog>
+    <dialog class="todo-dialog">
+      <form method="dialog">
+        <label for="todo-title">Title</label
+        ><input type="text" name="title" id="todo-title" />
+        <label for="todo-description">Description:</label
+        ><input type="textarea" name="description" id="todo-description" />
+        <label for="todo-date">Date:</label
+        ><input type="date" name="date" id="todo-date" required />
+        <label for="todo-priority">Priority</label
+        ><input type="number" name="priority" id="todo-priority" required />
+        <button type="submit">Create Todo</button>
+        <button type="button">Close</button>
+      </form>
+    </dialog>
 
-  <dialog class="todo-dialog">
-    <form method="dialog">
-      <label for="todo-title">Title</label><input type="text" name="title" id="todo-title">
-      <label for="todo-description">Description:</label><input type="textarea" name="description" id="todo-description">
-      <label for="todo-date">Date:</label><input type="date" name="date" id="todo-date" required>
-      <label for="todo-priority">Priority</label><input type="number" name="priority" id="todo-priority" required>
-      <button type="submit">Create Todo</button>
-      <button type="button">Close</button>
-    </form>
+    <!-- SIDE BAR -->
 
-  </dialog>
-
-
-<!-- SIDE BAR -->
-  
     <div class="side-bar">
       <h1>To Do List</h1>
       <h3>Projects</h3>
-      <div class="project-list">
+      <div class="project-list"></div>
+      <div class="create-project">
+        <img src="./images/plus.svg" alt="plus" />Create Project
       </div>
-      <div class="create-project"><img src="./images/plus.svg" alt="plus">Create Project</div>
     </div>
     <!-- HEADER -->
     <div class="header">
-      <div class="project-detail">
-    
-      </div>
-      <button class="create-todo"><img src="./images/plus.svg" alt="plus">Create Todo</button>
+      <div class="project-detail"></div>
+      <button class="create-todo">
+        <img src="./images/plus.svg" alt="plus" />Create Todo
+      </button>
     </div>
-    
-    
+
     <!-- CONTENT -->
-    <div class="content">
-    </div>
-  
-</body>
+    <div class="content"></div>
+  </body>
 </html>
